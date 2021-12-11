@@ -1,0 +1,51 @@
+// TODO: 고기 클릭시 스크롤 생기는 현상, 투명도
+.container {
+  position: relative;
+  flex-grow: 1;
+  border: 1px solid blue;
+  .beef,
+  .key,
+  .shadow {
+    transition: all 1s;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 80%;
+    max-height: 70%;
+    margin: {
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+    }
+  }
+  .beef {
+    border-radius: 250px 500px 100px 300px;
+    border: 1px solid red;
+    z-index: 1;
+    &.active {
+      transform: translateY(-13vh);
+      & ~ .key {
+        transform: rotate(350deg);
+        bottom: -65%;
+        opacity: 1;
+      }
+      & ~ .shadow {
+        transform: translateY(13vh);
+      }
+    }
+  }
+  .key {
+    z-index: 0;
+    max-width: 20%;
+    max-height: 10%;
+    opacity: 0;
+    bottom: 0;
+  }
+  .shadow {
+    z-index: -1;
+    top: 10%;
+  }
+}
