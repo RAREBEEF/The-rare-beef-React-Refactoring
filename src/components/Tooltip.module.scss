@@ -2,7 +2,7 @@
   opacity: 0;
   transition: opacity 1s;
   .tooltip-arrow {
-    transition: bottom 1s;
+    transition: transform 1s;
     z-index: 10;
     position: absolute;
     border: 2vh solid white;
@@ -13,18 +13,20 @@
     height: 0;
     margin: auto;
     top: 0;
-    bottom: -30%;
+    // bottom: -30%;
+    bottom: 0;
     left: 0;
     right: 0;
   }
   .tooltip-content {
-    transition: bottom 1s;
+    transition: transform 1s;
     z-index: 10;
     display: flex;
     top: 0;
-    bottom: calc(-30.5% + 5vh + 2vh);
+    // bottom: calc(-30.5% + 5vh + 2vh);
     left: 0;
     right: 0;
+    bottom: 0;
     margin: auto;
     justify-content: space-around;
     align-items: center;
@@ -53,10 +55,10 @@
   &.active {
     opacity: 1;
     .tooltip-arrow {
-      bottom: -50%;
+      transform: translateY(18vh)
     }
     .tooltip-content {
-      bottom: calc(-50.5% + 5vh + 2vh);;
+      transform:translateY(15vh);
     }
   }
 }
