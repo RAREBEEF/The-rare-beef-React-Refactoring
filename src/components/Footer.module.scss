@@ -1,9 +1,27 @@
 .container {
-  border: 1px solid blue;
+  $neon: #ff3557;
   font-size: 2vh;
   text-align: center;
   padding: {
-    top: 5px;
-    bottom: 5px;
+    top: 10px;
+    bottom: 15px;
+  }
+  .neon {
+    display: inline-block;
+    transform: translateZ(0);
+    &.neon--active {
+      animation: neon 0.2s 1.5s forwards;
+      @keyframes neon {
+        0% {
+          text-shadow: none;
+          color: black;
+        }
+        100% {
+          text-shadow: $neon 0 0 21px, $neon 0 0 42px, $neon 0 0 82px,
+          $neon 0 0 102px;
+          color: white;
+        }
+      }
+    }
   }
 }

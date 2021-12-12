@@ -1,8 +1,15 @@
-// TODO: 고기 클릭시 스크롤 생기는 현상, 투명도
+// TODO: 고기 클릭시 스크롤 생기는 현상
 .container {
   position: relative;
   flex-grow: 1;
-  border: 1px solid blue;
+  transition: filter 1s 0s;
+  filter: brightness(10%);
+  pointer-events: none;
+  &.light-on {
+    filter: none;
+    pointer-events: all;
+    transition: filter 1s 2s;
+  }
   .beef,
   .key,
   .shadow {
@@ -14,38 +21,45 @@
     right: 0;
     max-width: 80%;
     max-height: 70%;
-    margin: {
-      top: auto;
-      left: auto;
-      right: auto;
-      bottom: auto;
-    }
+    margin: auto;
   }
   .beef {
     border-radius: 250px 500px 100px 300px;
-    border: 1px solid red;
-    z-index: 1;
+    z-index: 2;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-1.5vh);
+      &~.shadow {
+        transform: translateY(1.5vh) scale(0.98);
+      }
+    }
     &.active {
       transform: translateY(-13vh);
       & ~ .key {
-        transform: rotate(350deg);
+        transition: opacity 0s 0s, transform 1s 0s, bottom 1s 0s;
+        transform: rotate(355deg);
         bottom: -65%;
         opacity: 1;
       }
       & ~ .shadow {
-        transform: translateY(13vh);
+        transform: translateY(13vh) scale(0.8);
       }
     }
   }
   .key {
-    z-index: 0;
+    transition: opacity 0s 1s, transform 1s 0s, bottom 1s 0s;
+    transform-origin: center;
+    z-index: 1;
     max-width: 20%;
     max-height: 10%;
     opacity: 0;
-    bottom: 0;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(120%);
+    }
   }
   .shadow {
-    z-index: -1;
+    z-index: 0;
     top: 10%;
   }
 }

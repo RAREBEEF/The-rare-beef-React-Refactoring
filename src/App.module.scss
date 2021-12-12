@@ -2,4 +2,15 @@
   display: flex;
   position: relative;
   flex-direction: column;
+  background-color: #2b2b2b;
+  transition: background-color 1s 0s;
+  font: {
+    family: "Raleway", sans-serif;
+    size: 10vh;
+    weight: 700;
+  }
+  &.light-on {
+    transition-delay: 2s;
+    background-color: #ce979e;
+  }
 }

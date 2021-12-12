@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import styles from "./App.module.scss";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Center from "./components/Center";
 import Footer from "./components/Footer";
@@ -20,14 +20,16 @@ function App() {
   });
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 
+  const [lightOn, setLightOn] = useState(false);
+
   return (
     <div
-      className={classNames(styles["container"])}
+      className={classNames(styles["container"], lightOn && styles["light-on"])}
       style={{ height: "calc(var(--vh, 1vh) * 100)" }}
     >
-      <Header />
-      <Center />
-      <Footer />
+      <Header lightOn={lightOn} setLightOn={setLightOn} />
+      <Center lightOn={lightOn} setLightOn={setLightOn} vh={vh} />
+      <Footer lightOn={lightOn} setLightOn={setLightOn} />
     </div>
   );
 }
