@@ -36,9 +36,8 @@
     &.active {
       transform: translateY(-13vh);
       & ~ .key {
-        transition: opacity 0s 0s, transform 1s 0s, bottom 1s 0s;
-        transform: rotate(355deg);
-        bottom: -65%;
+        transition: opacity 0s 0s, transform 1s 0s;
+        transform: translateY(23vh) rotate(355deg);
         opacity: 1;
       }
       & ~ .shadow {
@@ -47,7 +46,7 @@
     }
   }
   .key {
-    transition: opacity 0s 1s, transform 1s 0s, bottom 1s 0s;
+    transition: opacity 0s 1s, transform 1s 0s;
     transform-origin: center;
     z-index: 1;
     max-width: 20%;
