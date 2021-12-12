@@ -1,7 +1,7 @@
 import styles from "./Tooltip.module.scss";
 import classNames from "classnames";
-import velog from "../velog.png";
-import github from "../github.png";
+import velog from "../images/velog.png";
+import github from "../images/github.png";
 export default function Tooltip({ tooltipActive, logoActive }) {
   return (
     <div

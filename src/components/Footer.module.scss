@@ -10,7 +10,7 @@
     display: inline-block;
     transform: translateZ(0);
     &.neon--active {
-      animation: neon 0.2s 1.5s forwards;
+      animation: neon 0.2s 1.2s forwards;
       @keyframes neon {
         0% {
           text-shadow: none;

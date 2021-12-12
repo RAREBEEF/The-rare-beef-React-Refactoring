@@ -1,11 +1,10 @@
 import classNames from "classnames";
 import styles from "./Center.module.scss";
-import logoImg from "../beef.svg";
-import shadowImg from "../shadow.svg";
-import keyImg from "../key.svg";
+import logoImg from "../images/beef.svg";
+import shadowImg from "../images/shadow.svg";
+import keyImg from "../images/key.svg";
 import { useCallback, useState } from "react";
 import Tooltip from "./Tooltip";
-// import Modal from "./Modal";
 
 export default function Center({ lightOn, vh }) {
   const [logoActive, setLogoActive] = useState(false);
@@ -19,17 +18,12 @@ export default function Center({ lightOn, vh }) {
     setTooltipActive(!tooltipActive);
   }, [tooltipActive]);
 
-  // const tooltipClose = useCallback(() => {
-  //   setTooltipActive(false);
-  // }, []);
-
   logoActive && !lightOn && setLogoActive(false);
   tooltipActive && !logoActive && setTooltipActive(false);
 
   return (
     <div
       className={classNames(styles["container"], lightOn && styles["light-on"])}
-      // onClick={tooltipClose}
     >
       <div className={classNames(styles["logo"])}>
         <img
@@ -52,7 +46,6 @@ export default function Center({ lightOn, vh }) {
           className={classNames(styles["shadow"])}
         />
       </div>
-      {/* {modalActive && <Modal vh={vh} setModalActive={setModalActive} />} */}
       <Tooltip tooltipActive={tooltipActive} logoActive={logoActive} />
     </div>
   );
