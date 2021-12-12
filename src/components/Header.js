@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import switchImg from "../images/switch.svg";
 import styles from "./Header.module.scss";
 import lightOnMp3 from "../audios/light-on.mp3";
@@ -7,8 +7,8 @@ import lightOffMp3 from "../audios/light-off.mp3";
 
 export default function Header({ lightOn, setLightOn }) {
   const [switchActive, setSwitchActive] = useState(false);
-  const lightOnSound = new Audio(lightOnMp3);
-  const lightOffSound = new Audio(lightOffMp3);
+  const [lightOnSound] = useState(new Audio(lightOnMp3));
+  const [lightOffSound] = useState(new Audio(lightOffMp3));
 
   const timer = useCallback(() => {
     setTimeout(() => {
@@ -21,7 +21,8 @@ export default function Header({ lightOn, setLightOn }) {
     setLightOn(!lightOn);
     lightOn ? lightOffSound.play() : lightOnSound.play();
     timer();
-  }, [timer, lightOn, setLightOn]);
+  }, [timer, lightOn, setLightOn, lightOnSound, lightOffSound]);
+
   return (
     <div className={classNames(styles["container"])}>
       <h1 className={classNames(styles["title"])}>
