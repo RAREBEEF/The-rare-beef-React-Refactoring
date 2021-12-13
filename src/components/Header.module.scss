@@ -8,6 +8,7 @@
     right: 2vh;
     bottom: 1vh;
   }
+
   .neon {
     display: inline-block;
     transform: translateZ(0);
@@ -32,18 +33,19 @@
       }
     }
   }
+
   .title {
     display: flex;
     flex-wrap: wrap;
     font-size: 10vh;
     .title__no-neon {
-      margin-right: 3vh;
-    }
-    .title__neon {
-      &.neon--active {
+      margin: {
+        right: 3vh;
+        bottom: -2vh;
       }
     }
   }
+
   .author {
     margin: {
       top: 2vh;
@@ -53,6 +55,7 @@
       animation-delay: 0.4s;
     }
   }
+
   .switch {
     position: fixed;
     top: -10%;
@@ -61,6 +64,23 @@
     max-width: 30px;
     max-height: 50%;
     cursor: pointer;
+    transform-origin: top;
+    animation: swing 3s linear infinite;
+    @keyframes swing {
+      0% {transform: rotate(0deg)}
+      10% {transform: rotate(-2deg)}
+      20% {transform: rotate(-4.5deg)}
+      25% {transform: rotate(-5deg)}
+      30% {transform: rotate(-4.5deg)}
+      40% {transform: rotate(-2deg)}
+      50% {transform: rotate(0deg)}
+      60% {transform: rotate(2deg)}
+      70% {transform: rotate(4.5deg)}
+      75% {transform: rotate(5deg)}
+      80% {transform: rotate(4.5deg)}
+      90% {transform: rotate(2deg)}
+      100% {transform: rotate(0deg)}
+    }
     &:hover {
       filter:brightness(150%);
     }

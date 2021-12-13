@@ -2,7 +2,7 @@
   opacity: 0;
   transition: opacity 1s;
   .tooltip-arrow {
-    transition: transform 1s;
+    transition: transform .7s;
     z-index: 10;
     position: absolute;
     border: 2vh solid white;
@@ -13,26 +13,24 @@
     height: 0;
     margin: auto;
     top: 0;
-    // bottom: -30%;
     bottom: 0;
     left: 0;
     right: 0;
   }
   .tooltip-content {
-    transition: transform 1s;
+    transition: transform .7s;
     z-index: 10;
     display: flex;
-    top: 0;
-    // bottom: calc(-30.5% + 5vh + 2vh);
-    left: 0;
-    right: 0;
-    bottom: 0;
     margin: auto;
     justify-content: space-around;
     align-items: center;
     position: absolute;
     width: 12vh;
     height: 5vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: white;
     border-radius: 5px;
     a {
