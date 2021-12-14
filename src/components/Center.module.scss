@@ -27,13 +27,13 @@
     z-index: 2;
     cursor: pointer;
     &:hover {
-      transform: translateY(-1.5vh);
+      transform: scale(1.02);
       &~.shadow {
-        transform: translateY(1.5vh) scale(0.98);
+        transform: scale(1.02);
       }
     }
     &.active {
-      transform: translateY(-13vh);
+      transform: translateY(-13vh) scale(1.02);
       & ~ .key {
         transition: opacity 0s 0s, transform 1s 0s;
         transform: translateY(23vh) rotate(355deg);

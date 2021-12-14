@@ -6,7 +6,7 @@ import keyImg from "../images/key.svg";
 import { useCallback, useState } from "react";
 import Tooltip from "./Tooltip";
 
-export default function Center({ lightOn, vh }) {
+export default function Center({ lightOn }) {
   const [logoActive, setLogoActive] = useState(false);
   const [tooltipActive, setTooltipActive] = useState(false);
 

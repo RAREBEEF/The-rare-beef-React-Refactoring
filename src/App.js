@@ -6,7 +6,6 @@ import Center from "./components/Center";
 import Footer from "./components/Footer";
 
 function App() {
-  // 모바일 주소창 고려한 vh 정의
   const [vh, setVh] = React.useState(window.innerHeight * 0.01);
   useEffect(() => {
     const resize = () => {
@@ -28,7 +27,7 @@ function App() {
       style={{ height: "calc(var(--vh, 1vh) * 100)" }}
     >
       <Header lightOn={lightOn} setLightOn={setLightOn} />
-      <Center lightOn={lightOn} setLightOn={setLightOn} vh={vh} />
+      <Center lightOn={lightOn} setLightOn={setLightOn} />
       <Footer lightOn={lightOn} setLightOn={setLightOn} />
     </div>
   );

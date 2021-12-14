@@ -9,6 +9,7 @@ export default function Tooltip({ tooltipActive, logoActive }) {
         styles["container"],
         logoActive && tooltipActive && styles["active"]
       )}
+      id="tooltip"
     >
       <div className={classNames(styles["tooltip-arrow"])}></div>
       <div className={classNames(styles["tooltip-content"])}>

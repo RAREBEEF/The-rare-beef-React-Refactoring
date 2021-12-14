@@ -15,19 +15,22 @@
     &.neon--active {
       animation: neon 1s 0s forwards;
       @keyframes neon {
+        0% {
+          text-shadow: $neon 0 0 82px;
+          color: white;
+        }
         30%,
         70% {
           text-shadow: none;
           color: black;
         }
-        0%,
         50% {
-          text-shadow: $neon 0 0 21px, $neon 0 0 82px;
+          text-shadow: $neon 0 0 21px;
           color: white;
         }
         100% {
           text-shadow: $neon 0 0 21px, $neon 0 0 42px, $neon 0 0 82px,
-          $neon 0 0 102px;
+            $neon 0 0 102px;
           color: white;
         }
       }
@@ -67,22 +70,48 @@
     transform-origin: top;
     animation: swing 3s linear infinite;
     @keyframes swing {
-      0% {transform: rotate(0deg)}
-      10% {transform: rotate(-2deg)}
-      20% {transform: rotate(-4.5deg)}
-      25% {transform: rotate(-5deg)}
-      30% {transform: rotate(-4.5deg)}
-      40% {transform: rotate(-2deg)}
-      50% {transform: rotate(0deg)}
-      60% {transform: rotate(2deg)}
-      70% {transform: rotate(4.5deg)}
-      75% {transform: rotate(5deg)}
-      80% {transform: rotate(4.5deg)}
-      90% {transform: rotate(2deg)}
-      100% {transform: rotate(0deg)}
+      0% {
+        transform: rotate(0deg);
+      }
+      10% {
+        transform: rotate(-2deg);
+      }
+      20% {
+        transform: rotate(-4.5deg);
+      }
+      25% {
+        transform: rotate(-5deg);
+      }
+      30% {
+        transform: rotate(-4.5deg);
+      }
+      40% {
+        transform: rotate(-2deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      60% {
+        transform: rotate(2deg);
+      }
+      70% {
+        transform: rotate(4.5deg);
+      }
+      75% {
+        transform: rotate(5deg);
+      }
+      80% {
+        transform: rotate(4.5deg);
+      }
+      90% {
+        transform: rotate(2deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
     }
     &:hover {
-      filter:brightness(150%);
+      filter: brightness(150%);
     }
     &.active {
       animation: switch 0.3s 2 alternate;
