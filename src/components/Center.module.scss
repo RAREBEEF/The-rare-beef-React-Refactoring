@@ -54,6 +54,10 @@
     &:hover {
       filter: brightness(120%);
     }
+    &.clicked {
+      filter: brightness(120%);
+      z-index: 1;
+    }
   }
   .shadow {
     z-index: 0;

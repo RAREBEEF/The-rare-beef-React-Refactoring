@@ -36,7 +36,10 @@ export default function Center({ lightOn }) {
         <img
           src={keyImg}
           alt="Key"
-          className={classNames(styles["key"])}
+          className={classNames(
+            styles["key"],
+            tooltipActive && styles["clicked"]
+          )}
           id="key"
           onClick={keyClick}
         />
