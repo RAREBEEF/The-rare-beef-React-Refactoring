@@ -114,13 +114,17 @@
       filter: brightness(150%);
     }
     &.active {
-      animation: switch 0.3s 2 alternate;
+      animation: switch 0.7s;
       @keyframes switch {
-        from {
+        0% {
           top: -10%;
         }
-        to {
+        50%,
+        70% {
           top: 0;
+        }
+        100% {
+          top: -10%;
         }
       }
     }

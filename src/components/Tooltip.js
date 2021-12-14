@@ -11,7 +11,6 @@ export default function Tooltip({ tooltipActive, logoActive }) {
       )}
       id="tooltip"
     >
-      <div className={classNames(styles["tooltip-arrow"])}></div>
       <div className={classNames(styles["tooltip-content"])}>
         <a
           href="https://velog.io/@drrobot409"

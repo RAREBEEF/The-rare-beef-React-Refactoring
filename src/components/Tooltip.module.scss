@@ -1,24 +1,8 @@
 .container {
   opacity: 0;
-  transition: opacity 1s;
-  .tooltip-arrow {
-    transition: transform .7s;
-    z-index: 10;
-    position: absolute;
-    border: 2vh solid white;
-    border-left: 1vw solid rgba(0, 0, 0, 0);
-    border-right: 1vw solid rgba(0, 0, 0, 0);
-    border-bottom: none;
-    width: 0;
-    height: 0;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
+  transition: opacity .7s;
   .tooltip-content {
-    transition: transform .7s;
+    transition: top .7s cubic-bezier(0.600, -0.280, 0.735, 0.045);
     z-index: 10;
     display: flex;
     margin: auto;
@@ -34,7 +18,7 @@
     background-color: white;
     border-radius: 5px;
     a {
-      transition: all .3s;
+      transition: all 0.3s;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -43,20 +27,33 @@
       border-radius: 50%;
       overflow: hidden;
       &:hover {
-        transform: scale(1.1)
+        transform: scale(1.1);
       }
     }
     img {
       height: 4vh;
     }
+    &::after {
+      content: "";
+      position: absolute;
+      border: 2vh solid white;
+      border-left: 1vw solid rgba(0, 0, 0, 0);
+      border-right: 1vw solid rgba(0, 0, 0, 0);
+      border-bottom: none;
+      width: 0;
+      height: 0;
+      margin: auto;
+      top: 6.8vh;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
   }
   &.active {
     opacity: 1;
-    .tooltip-arrow {
-      transform: translateY(18vh)
-    }
     .tooltip-content {
-      transform:translateY(15vh);
+      transition: top .7s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      top: 30vh;
     }
   }
 }
