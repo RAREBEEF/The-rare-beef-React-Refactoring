@@ -3,7 +3,7 @@ import styles from "./ToTop.module.scss";
 import classNames from "classnames";
 import ScrollMagic from "scrollmagic";
 
-export default function Btn() {
+export default function Btn({ lightOn }) {
   React.useEffect(() => {
     const topBtnEl = document.querySelector("#btn--to-top");
     const topBtnTriggerEl = document.querySelector("#top-btn-trigger");
@@ -23,7 +23,9 @@ export default function Btn() {
   }, []);
 
   return (
-    <div className={classNames(styles["container"])}>
+    <div
+      className={classNames(styles["container"], lightOn && styles["light-on"])}
+    >
       <a
         href="https://velog.io/@drrobot409"
         target="_blank"

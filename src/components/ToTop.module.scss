@@ -5,6 +5,13 @@
   bottom: 1vh;
   right: calc(3vh - 10px);
   z-index: 999;
+  transition: opacity 1s;
+  opacity: 0;
+  pointer-events: none;
+  &.light-on {
+    opacity: 2;
+    pointer-events: all;
+  }
 }
 .btn {
   display: flex;

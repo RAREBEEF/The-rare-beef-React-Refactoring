@@ -2,7 +2,7 @@ import classNames from "classnames";
 import styles from "./App.module.scss";
 import React, { useEffect, useState } from "react";
 import Page from "./components/Page";
-import ToTopBtn from "./components/ToTop";
+import ToTop from "./components/ToTop";
 import ScrollGuide from "./components/Home/ScrollGuide";
 import Header from "./components/Header";
 import HomeCenter from "./components/Home/HomeCenter";
@@ -45,7 +45,7 @@ function App() {
       <Page cube>
         <CubeCenter />
       </Page>
-      <ToTopBtn />
+      <ToTop lightOn={lightOn} />
     </div>
   );
 }
