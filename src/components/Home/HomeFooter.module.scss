@@ -1,11 +1,14 @@
 .container {
   $neon: #ff3557;
-  font-size: 2vh;
   text-align: center;
+  font: {
+    size: 2vmin;
+  }
   padding: {
     top: 10px;
     bottom: 15px;
   }
+  
   .neon {
     display: inline-block;
     transform: translateZ(0);

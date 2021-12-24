@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  background: repeating-linear-gradient(
+    rgb(255, 78, 78),
+    rgb(255, 78, 78) 1px,
+    rgb(255, 246, 198) 0,
+    rgb(255, 246, 198) 60px
+  );
+  padding: {
+    left: calc(6vh + 30px);
+    right: calc(6vh + 30px);
+  }
+  .img-card__wrapper {
+    margin-top: -10vh;
+    border: 1px solid red;
+    background-color: rgb(255, 246, 198);
+    perspective: 2000px;
+    &:hover {
+      .img-card__front {
+        transform: rotateY(180deg);
+      }
+      .img-card__back {
+        transform: rotateY(0deg);
+      }
+    }
+    .img-card {
+      position: relative;
+      transition: transform 1s;
+      transform-origin: center;
+      backface-visibility: hidden;
+      img {
+        max-width: 95vw;
+        max-height: 62vh;
+        &.simplememo-pc-img {
+        }
+        &.simplememo-phone-img {
+          max-width: 30vw;
+        }
+      }
+    }
+    .img-card__front {
+    }
+    .img-card__back {
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: rotateY(-180deg);
+      .btn-group {
+      }
+    }
+  }
+}
+
+// .img-card {
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   perspective: 2000px;
+//   border-radius: 5px;
+//   margin: {
+//     bottom: 1vh;
+//   }
+//   img {
+//     transition: transform 0.7s;
+//     max-width: 95vw;
+//     max-height: 60vh;
+//     backface-visibility: hidden;
+//     pointer-events: none;
+//   }
+//   .img-card__back {
+//     position: absolute;
+//     transform: rotateY(180deg);
+//     max-height: 120%;
+//     left: 0;
+//     right: 0;
+//     margin: auto;
+//   }
+//   &:hover {
+//     .img-card__front {
+//       transform: rotateY(-180deg);
+//     }
+//     .img-card__back {
+//       transform: rotateY(0deg);
+//     }
+//   }
+// }
+// .btn-group {
+//   display: flex;
+//   justify-content: space-between;
+//   padding: {
+//     top: 2vh;
+//     left: 2vh;
+//     right: 2vh;
+//     bottom: 4vh;
+//   }
+// }

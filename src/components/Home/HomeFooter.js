@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import styles from "./Footer.module.scss";
+import styles from "./HomeFooter.module.scss";
 
-export default function Footer({ lightOn }) {
+export default function HomeFooter({ lightOn }) {
   return (
     <div className={classNames(styles["container"])}>
       <div className={classNames(styles["copyright"])}>

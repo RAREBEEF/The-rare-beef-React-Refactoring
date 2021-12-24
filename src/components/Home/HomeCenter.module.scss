@@ -2,18 +2,19 @@
   position: relative;
   flex-grow: 1;
   transition: filter 1s 0s;
-  filter: brightness(10%);
   pointer-events: none;
+  filter: brightness(10%);
   &.light-on {
-    filter: none;
-    pointer-events: all;
     transition: filter 1s 2s;
+    pointer-events: all;
+    filter: none;
   }
+
   .beef,
   .key,
   .shadow {
-    transition: top 1s cubic-bezier(0.680, -0.550, 0.265, 1.550), transform 1s cubic-bezier(0.680, -0.550, 0.265, 1.550), filter .3s ease;
     position: absolute;
+    transition: top 1s cubic-bezier(0.680, -0.550, 0.265, 1.550), transform 1s cubic-bezier(0.680, -0.550, 0.265, 1.550), filter .3s ease;
     max-width: 80%;
     max-height: 70%;
     top: 0;
@@ -22,10 +23,11 @@
     right: 0;
     margin: auto;
   }
+
   .beef {
-    border-radius: 250px 500px 100px 300px;
     z-index: 2;
     cursor: pointer;
+    border-radius: 250px 500px 100px 300px;
     &:hover {
       filter:contrast(1.2);
     }
@@ -34,15 +36,16 @@
       & ~ .key {
         transition: opacity 0s 0s, top 1.3s 0s ease, transform 1.3s 0s ease;
         transform: rotate(355deg);
-        top: 43vh;
+        top: 48vh;
         opacity: 1;
       }
       & ~ .shadow {
-        top: 33vh;
         transform: scale(0.8);
+        top: 33vh;
       }
     }
   }
+
   .key {
     transition: opacity 0s 1s, top 1.3s 0s ease, transform 0s 1s ease;
     transform-origin: center;
@@ -59,6 +62,7 @@
       z-index: 1;
     }
   }
+
   .shadow {
     z-index: 0;
     top: 10%;

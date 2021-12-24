@@ -1,18 +1,19 @@
 import classNames from "classnames";
-import styles from "./Center.module.scss";
-import logoImg from "../images/beef.svg";
-import shadowImg from "../images/shadow.svg";
-import keyImg from "../images/key.svg";
+import styles from "./HomeCenter.module.scss";
+import logoImg from "../../images/beef.svg";
+import shadowImg from "../../images/shadow.svg";
+import keyImg from "../../images/key.svg";
 import { useCallback, useState } from "react";
-import Tooltip from "./Tooltip";
+import KeyTooltip from "./KeyTooltip";
 
-export default function Center({ lightOn }) {
+export default function HomeCenter({ lightOn, setFirstClick }) {
   const [logoActive, setLogoActive] = useState(false);
   const [tooltipActive, setTooltipActive] = useState(false);
 
   const logoClick = useCallback(() => {
     setLogoActive(!logoActive);
-  }, [logoActive]);
+    setFirstClick(true);
+  }, [logoActive, setFirstClick]);
 
   const keyClick = useCallback(() => {
     setTooltipActive(!tooltipActive);
@@ -49,7 +50,7 @@ export default function Center({ lightOn }) {
           className={classNames(styles["shadow"])}
         />
       </div>
-      <Tooltip tooltipActive={tooltipActive} logoActive={logoActive} />
+      <KeyTooltip tooltipActive={tooltipActive} logoActive={logoActive} />
     </div>
   );
 }

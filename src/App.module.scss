@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-color: #2b2b2b;
   -webkit-user-select: none;
@@ -8,19 +11,9 @@ body {
 }
 
 .container {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  background-color: #2b2b2b;
-  transition: background-color 1s 0s;
-  font: {
-    family: "Raleway", sans-serif;
-    size: 10vh;
-    weight: 700;
-  }
-  
+  scroll-snap-type: y mandatory;
+  overflow-y: hidden;
   &.light-on {
-    transition-delay: 2s;
-    background-color: #ce979e;
+    overflow-y: auto;
   }
 }
