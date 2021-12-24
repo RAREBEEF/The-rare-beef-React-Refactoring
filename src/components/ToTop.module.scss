@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 1vh;
+  right: calc(3vh - 10px);
+  z-index: 999;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: width 0.6s, margin 0.6s;
+  width: 0px;
+  height: 30px;
+  pointer-events: none;
+  opacity: 0.3;
+  color: black;
+  overflow: hidden;
+  &.show {
+    width: 30px;
+    pointer-events: all;
+    margin: {
+      right: 10px;
+    }
+  }
+  &:hover {
+    color: red;
+  }
+}

@@ -1,8 +1,8 @@
-import styles from "./Tooltip.module.scss";
+import styles from "./KeyTooltip.module.scss";
 import classNames from "classnames";
-import velog from "../images/velog.png";
-import github from "../images/github.png";
-export default function Tooltip({ tooltipActive, logoActive }) {
+import velog from "../../images/velog.png";
+import github from "../../images/github.png";
+export default function KeyTooltip({ tooltipActive, logoActive }) {
   return (
     <div
       className={classNames(
@@ -14,7 +14,7 @@ export default function Tooltip({ tooltipActive, logoActive }) {
       <div className={classNames(styles["tooltip-content"])}>
         <a
           href="https://velog.io/@drrobot409"
-          className={classNames(styles["link--velog"])}
+          className={classNames(styles["tooltip__btn"], styles["link--velog"])}
           target="_blank"
           rel="noreferrer"
         >
@@ -22,7 +22,7 @@ export default function Tooltip({ tooltipActive, logoActive }) {
         </a>
         <a
           href="https://github.com/RAREBEEF"
-          className={classNames(styles["link--github"])}
+          className={classNames(styles["tooltip__btn"], styles["link--github"])}
           target="_blank"
           rel="noreferrer"
         >

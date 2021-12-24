@@ -1,12 +1,19 @@
 .container {
   $neon: #ff3557;
   position: relative;
-  font-weight: 900;
+  font: {
+    family: "Raleway", sans-serif;
+    weight: 900;
+  }
   padding: {
     top: 2vh;
     left: 2vh;
     right: 2vh;
     bottom: 1vh;
+  }
+
+  &.simplememo {
+    background-color: rgb(255, 246, 198);
   }
 
   .neon {
@@ -40,7 +47,10 @@
   .title {
     display: flex;
     flex-wrap: wrap;
-    font-size: 10vh;
+    font: {
+      size: 10vh;
+    }
+
     .title__no-neon {
       margin: {
         right: 3vh;
@@ -53,21 +63,23 @@
     margin: {
       top: 2vh;
     }
-    font-size: 5vh;
+    font: {
+      size: 5vh;
+    }
     .author__neon {
       animation-delay: 0.4s;
     }
   }
 
   .switch {
-    position: fixed;
-    top: -10%;
+    position: absolute;
+    transform-origin: top;
+    max-width: 30px;
+    max-height: 50vh;
+    top: -50%;
     right: 10%;
     z-index: 2;
-    max-width: 30px;
-    max-height: 50%;
     cursor: pointer;
-    transform-origin: top;
     animation: swing 3s linear infinite;
     @keyframes swing {
       0% {
@@ -117,14 +129,14 @@
       animation: switch 0.7s;
       @keyframes switch {
         0% {
-          top: -10%;
+          top: -50%;
         }
         50%,
         70% {
           top: 0;
         }
         100% {
-          top: -10%;
+          top: -50%;
         }
       }
     }

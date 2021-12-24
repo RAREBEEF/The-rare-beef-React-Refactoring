@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.7s 1s;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  font: {
+    family: "Raleway", sans-serif;
+    size: 10vmin;
+    weight: 900;
+  }
+  &.clicked {
+    pointer-events: all;
+    opacity: 0.3;
+  }
+
+  .guide {
+    animation: updown 0.7s linear infinite alternate;
+    @keyframes updown {
+      0% {
+        transform: translateY(-0.5vh);
+      }
+      100% {
+        transform: translateY(0.5vh);
+      }
+    }
+  }
+  
+  .guide-text {
+    font: {
+      size: 4vmin;
+    }
+    margin: {
+      bottom: -1vh;
+    }
+  }
+}

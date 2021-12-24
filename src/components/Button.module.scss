@@ -1,0 +1,34 @@
+.btn--link {
+  transition: color 0.3s, background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: {
+    top: 2vh;
+    left: 2vh;
+    right: 2vh;
+    bottom: 2vh;
+  }
+  border-radius: 5px;
+  text-decoration-line: none;
+  text-align: center;
+  font: {
+    family: "Raleway", sans-serif;
+    size: 3vmin;
+  }
+  padding: {
+    top: 1vh;
+    left: 1vh;
+    right: 1vh;
+    bottom: 1vh;
+  }
+}
+
+.simplememo {
+  background-color: #463f3a;
+  color: #f4f3ee;
+  &:hover {
+    background-color: #8A817c;
+  }
+}
