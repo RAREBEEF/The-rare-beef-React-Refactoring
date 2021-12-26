@@ -43,6 +43,7 @@ function App() {
         <SimpleMemoCenter />
       </Page>
       <Page cube>
+        <Header cube title={"The cube"} />
         <CubeCenter />
       </Page>
       <ToTop lightOn={lightOn} />

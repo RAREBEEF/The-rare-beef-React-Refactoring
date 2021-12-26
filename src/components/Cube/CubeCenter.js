@@ -101,9 +101,6 @@ Y 회전각 : ${moveY}`);
 
   return (
     <div className={classNames(styles["container"])}>
-      <div className={classNames(styles["controll-line"])}>
-        Development in progress
-      </div>
       <div
         className={classNames(styles["cube"])}
         onMouseDown={dragStart}
@@ -115,6 +112,9 @@ Y 회전각 : ${moveY}`);
         <div className={classNames(styles["face"], styles["bottom"])}></div>
         <div className={classNames(styles["face"], styles["left"])}></div>
         <div className={classNames(styles["face"], styles["right"])}></div>
+      </div>
+      <div className={classNames(styles["control-line"])}>
+        <p>· Development in progress · Please visit us next time ·</p>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-$size: 50vmin;
+$size: 40vmin;
 
 @mixin face($color, $tx: 0px, $ty: 0px, $tz: 0px, $rx: 0deg, $ry: 0deg) {
   background-color: $color;
@@ -69,24 +69,35 @@ $size: 50vmin;
   }
 }
 
-.controll-line {
+.control-line {
+  p {
+    // text-align: center;
+    color: black;
+    z-index: 999;
+    font: {
+      family: "Raleway", sans-serif;
+      size: 7vmin;
+      weight: 900;
+    }
+    animation: marquee 10s linear infinite;
+    @keyframes marquee {
+      from {transform: translateX(100%)}
+      to {transform: translateX(-200%)}
+    }
+  }
+  background-color: rgb(255, 230, 0);
   z-index: 9;
   width: 110vw;
   height: 10vmin;
   line-height: 10vmin;
-  text-align: center;
-  background-color: rgb(255, 230, 0);
-  color: black;
+  word-break: keep-all;
+  white-space: nowrap;
   transform: rotate(5deg);
   position: absolute;
-  top: 0;
+  top: 0vh;
   bottom: 0;
   left: -5vw;
   right: 0;
   margin: auto;
-  opacity: 0.9;
-  font: {
-    size: 7vmin;
-    weight: 900;
-  }
+  opacity: .9;
 }

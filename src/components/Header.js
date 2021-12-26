@@ -11,6 +11,7 @@ export default function Header({
   title,
   home,
   simpleMemo,
+  cube,
 }) {
   const [switchActive, setSwitchActive] = useState(false);
   const [lightOnSound] = useState(new Audio(lightOnMp3));
@@ -34,7 +35,8 @@ export default function Header({
       className={classNames(
         styles["container"],
         home && styles["home"],
-        simpleMemo && styles["simplememo"]
+        simpleMemo && styles["simplememo"],
+        cube && styles["cube"]
       )}
     >
       {home ? (
