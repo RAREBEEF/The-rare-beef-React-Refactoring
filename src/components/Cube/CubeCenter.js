@@ -7,12 +7,12 @@ export default function CubeCenter() {
   ////////////////////
   // 마우스 클릭 이벤트 //
   ///////////////////
-
   const [lastX, setLastX] = useState(25);
-  const [lastY, setLastY] = useState(25);
+  const [lastY, setLastY] = useState(-25);
 
   const dragStart = useCallback(
     (e) => {
+      e.stopPropagation();
       let isClick = true;
       let clickX = 0;
       let clickY = 0;
@@ -27,14 +27,14 @@ export default function CubeCenter() {
           const nowX = e.screenX;
           const nowY = e.screenY;
 
-          moveX = lastX + clickX - nowX;
+          moveX = lastX - clickX + nowX;
           moveY = lastY + clickY - nowY;
 
           console.log(`X 회전각 : ${moveX}
 Y 회전각 : ${moveY}`);
 
           gsap.to(`.${styles["cube"]}`, 0, {
-            transform: `rotateY(${moveX}deg) rotateX(${moveY}deg)`,
+            transform: `rotateX(${moveY}deg) rotateY(${moveX}deg)`,
           });
         }
       });
@@ -56,6 +56,7 @@ Y 회전각 : ${moveY}`);
 
   const touchDragStart = useCallback(
     (e) => {
+      e.stopPropagation();
       let isTouch = true;
       let clickX = 0;
       let clickY = 0;
@@ -71,14 +72,14 @@ Y 회전각 : ${moveY}`);
           const nowX = e.targetTouches[0].screenX;
           const nowY = e.targetTouches[0].screenY;
 
-          moveX = lastX + clickX - nowX;
+          moveX = lastX - clickX + nowX;
           moveY = lastY + clickY - nowY;
 
           console.log(`X 회전각 : ${moveX}
 Y 회전각 : ${moveY}`);
 
           gsap.to(`.${styles["cube"]}`, 0, {
-            transform: `rotateY(${moveX}deg) rotateX(${moveY}deg)`,
+            transform: `rotateX(${moveY}deg) rotateY(${moveX}deg)`,
           });
         }
       });

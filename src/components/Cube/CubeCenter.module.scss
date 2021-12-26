@@ -16,7 +16,7 @@ $size: 50vmin;
   perspective: 1000px;
 }
 .cube {
-  transform: rotateX(25deg) rotateY(25deg);
+  transform: rotateX(-25deg) rotateY(25deg);
   cursor: move;
   transform-style: preserve-3d;
   position: absolute;
