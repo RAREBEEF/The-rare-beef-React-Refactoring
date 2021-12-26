@@ -32,7 +32,7 @@ export default function SimpleMemoCenter() {
               simpleMemo
             />
             <Button
-              text="Github"
+              text="Github Repository"
               href="https://github.com/RAREBEEF/Simple-Memo"
               simpleMemo
             />

@@ -1,6 +1,7 @@
 .btn--link {
   transition: color 0.3s, background-color 0.3s;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -15,13 +16,13 @@
   text-align: center;
   font: {
     family: "Raleway", sans-serif;
-    size: 3vmin;
+    size: 5vmin;
   }
   padding: {
-    top: 1vh;
-    left: 1vh;
-    right: 1vh;
-    bottom: 1vh;
+    top: 2vmin;
+    left: 2vmin;
+    right: 2vmin;
+    bottom: 2vmin;
   }
 }
 

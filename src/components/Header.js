@@ -68,6 +68,7 @@ export default function Header({
           RAREBEEF
         </span>
       </div>
+
       {home && (
         <img
           src={switchImg}

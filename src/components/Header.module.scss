@@ -15,10 +15,79 @@
   &.simplememo {
     background-color: rgb(255, 246, 198);
   }
-  
+
   &.cube {
+    font: {
+      family: "VT323", monospace;
+    }
     background-color: black;
     color: white;
+    .title {
+      animation: blink 5s step-end infinite;
+      @keyframes blink {
+        0%,
+        20%,
+        22%,
+        55%,
+        57%,
+        80%,
+        82%,
+        90%,
+        100% {
+          color: white;
+        }
+        21%,
+        56%,
+        81%,
+        83% {
+          color: black;
+        }
+      }
+    }
+    .author {
+      animation: blink 12s step-end infinite;
+      @keyframes blink {
+        0%,
+        20%,
+        22%,
+        55%,
+        57%,
+        80%,
+        82%,
+        90%,
+        100% {
+          color: white;
+        }
+        21%,
+        56%,
+        81%,
+        83% {
+          color: black;
+        }
+      }
+      .neon {
+        animation: blink 3s step-end infinite;
+        @keyframes blink {
+          0%,
+          20%,
+          22%,
+          55%,
+          57%,
+          80%,
+          82%,
+          90%,
+          100% {
+            color: white;
+          }
+          21%,
+          56%,
+          81%,
+          83% {
+            color: black;
+          }
+        }
+      }
+    }
   }
 
   .neon {
@@ -134,14 +203,14 @@
       animation: switch 0.7s;
       @keyframes switch {
         0% {
-          top: -50%;
+          transform: translateY(0);
         }
         50%,
         70% {
-          top: 0;
+          transform: translateY(15%);
         }
         100% {
-          top: -50%;
+          transform: translateY(0);
         }
       }
     }

@@ -114,7 +114,10 @@ Y 회전각 : ${moveY}`);
         <div className={classNames(styles["face"], styles["right"])}></div>
       </div>
       <div className={classNames(styles["control-line"])}>
-        <p>· Development in progress · Please visit us next time ·</p>
+        <p>
+          · CAUTION · This cube is unstable · Do not drag the cube · Please
+          visit this cube next time · CAUTION ·
+        </p>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 $size: 40vmin;
 
-@mixin face($color, $tx: 0px, $ty: 0px, $tz: 0px, $rx: 0deg, $ry: 0deg) {
+@mixin face($color: white, $tx: 0px, $ty: 0px, $tz: 0px, $rx: 0deg, $ry: 0deg) {
   background-color: $color;
   transform: translateX($tx) translateY($ty) translateZ($tz) rotateX($rx)
     rotateY($ry);
@@ -42,50 +42,111 @@ $size: 40vmin;
 
   .face {
     box-sizing: border-box;
-    border: 10px solid white;
+    border: 5px solid black;
     width: $size;
     height: $size;
     position: absolute;
     top: 0;
     left: 0;
+    animation: blink 20s step-end infinite;
+    @keyframes blink {
+      0%,
+      22%,
+      55%,
+      57%,
+      80%,
+      83%,
+      86%,
+      100% {
+        opacity: 1;
+      }
+      21%,
+      56%,
+      81%,
+      85% {
+        opacity: 0;
+      }
+    }
+    // &.front {
+    //   @include face($color: rgba(255, 192, 203, 0.5), $tz: $size / 2);
+    // }
+    // &.back {
+    //   @include face($color: rgba(135, 206, 235, 0.5), $tz: -$size / 2);
+    // }
+    // &.top {
+    //   @include face($color: rgba(0, 128, 0, 0.5), $ty: -$size / 2, $rx: 90deg);
+    // }
+    // &.bottom {
+    //   @include face($color: rgba(255, 255, 0, 0.5), $ty: $size / 2, $rx: 90deg);
+    // }
+    // &.left {
+    //   @include face($color: rgba(0, 0, 255, 0.5), $tx: -$size / 2, $ry: 90deg);
+    // }
+    // &.right {
+    //   @include face($color: rgba(255, 0, 0, 0.5), $tx: $size / 2, $ry: 90deg);
+    // }
     &.front {
-      @include face($color: rgba(255, 192, 203, 0.5), $tz: $size / 2);
+      @include face($tz: $size / 2);
     }
     &.back {
-      @include face($color: rgba(135, 206, 235, 0.5), $tz: -$size / 2);
+      @include face($tz: -$size / 2);
     }
     &.top {
-      @include face($color: rgba(0, 128, 0, 0.5), $ty: -$size / 2, $rx: 90deg);
+      @include face($ty: -$size / 2, $rx: 90deg);
     }
     &.bottom {
-      @include face($color: rgba(255, 255, 0, 0.5), $ty: $size / 2, $rx: 90deg);
+      @include face($ty: $size / 2, $rx: 90deg);
     }
     &.left {
-      @include face($color: rgba(0, 0, 255, 0.5), $tx: -$size / 2, $ry: 90deg);
+      @include face($tx: -$size / 2, $ry: 90deg);
     }
     &.right {
-      @include face($color: rgba(255, 0, 0, 0.5), $tx: $size / 2, $ry: 90deg);
+      @include face($tx: $size / 2, $ry: 90deg);
     }
   }
 }
 
 .control-line {
+  // animation: blink 5s step-end infinite;
+  // @keyframes blink {
+  //   0%,
+  //   20%,
+  //   22%,
+  //   55%,
+  //   57%,
+  //   80%,
+  //   82%,
+  //   90%,
+  //   100% {
+  //     opacity: 1;
+  //   }
+  //   21%,
+  //   56%,
+  //   81%,
+  //   83% {
+  //     opacity: 0;
+  //   }
+  // }
   p {
     // text-align: center;
     color: black;
     z-index: 999;
     font: {
-      family: "Raleway", sans-serif;
+      family: "VT323", monospace;
       size: 7vmin;
       weight: 900;
     }
     animation: marquee 10s linear infinite;
     @keyframes marquee {
-      from {transform: translateX(100%)}
-      to {transform: translateX(-200%)}
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-200%);
+      }
     }
   }
-  background-color: rgb(255, 230, 0);
+  background-color: rgb(226, 204, 0);
   z-index: 9;
   width: 110vw;
   height: 10vmin;
@@ -99,5 +160,5 @@ $size: 40vmin;
   left: -5vw;
   right: 0;
   margin: auto;
-  opacity: .9;
+  opacity: 0.9;
 }

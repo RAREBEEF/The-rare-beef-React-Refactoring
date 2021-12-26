@@ -14,7 +14,8 @@
   .key,
   .shadow {
     position: absolute;
-    transition: top 1s cubic-bezier(0.680, -0.550, 0.265, 1.550), transform 1s cubic-bezier(0.680, -0.550, 0.265, 1.550), filter .3s ease;
+    transition: top 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+      transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55), filter 0.3s ease;
     max-width: 80%;
     max-height: 70%;
     top: 0;
@@ -29,25 +30,25 @@
     cursor: pointer;
     border-radius: 250px 500px 100px 300px;
     &:hover {
-      filter:contrast(1.2);
+      filter: contrast(1.2);
     }
     &.active {
-      top: -28vh;
+      transform: translateY(-15vh);
       & ~ .key {
-        transition: opacity 0s 0s, top 1.3s 0s ease, transform 1.3s 0s ease;
-        transform: rotate(355deg);
-        top: 48vh;
+        transition: opacity 0s 0s, transform 1.3s 0s ease;
+        transform: translateY(23vh) rotate(355deg);
+        // top: 48vh;
         opacity: 1;
       }
       & ~ .shadow {
-        transform: scale(0.8);
-        top: 33vh;
+        transform: scale(0.8) translateY(20vh);
+        // top: 33vh;
       }
     }
   }
 
   .key {
-    transition: opacity 0s 1s, top 1.3s 0s ease, transform 0s 1s ease;
+    transition: opacity 0s 1s, transform 1.3s 0s ease;
     transform-origin: center;
     z-index: 0;
     max-width: 20%;
@@ -69,4 +70,3 @@
     pointer-events: none;
   }
 }
-
