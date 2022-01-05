@@ -27,14 +27,14 @@ export default function CubeCenter() {
           const nowX = e.screenX;
           const nowY = e.screenY;
 
-          moveX = lastX - clickX + nowX;
-          moveY = lastY + clickY - nowY;
+          moveX = lastY + clickY - nowY;
+          moveY = lastX - clickX + nowX;
 
           console.log(`X 회전각 : ${moveX}
 Y 회전각 : ${moveY}`);
 
           gsap.to(`.${styles["cube"]}`, 0, {
-            transform: `rotateX(${moveY}deg) rotateY(${moveX}deg)`,
+            transform: `rotateX(${moveX}deg) rotateY(${moveY}deg)`,
           });
         }
       });
@@ -114,10 +114,7 @@ Y 회전각 : ${moveY}`);
         <div className={classNames(styles["face"], styles["right"])}></div>
       </div>
       <div className={classNames(styles["control-line"])}>
-        <p>
-          · CAUTION · This cube is unstable · Do not drag the cube · Please
-          visit this cube next time · CAUTION ·
-        </p>
+        <p>· Development in progress · Please visit this cube next time ·</p>
       </div>
     </div>
   );

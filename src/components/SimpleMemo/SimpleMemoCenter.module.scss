@@ -5,20 +5,21 @@
   align-items: center;
   justify-content: space-around;
   position: relative;
-  background: repeating-linear-gradient(
-    rgb(255, 78, 78),
-    rgb(255, 78, 78) 1px,
-    rgb(255, 246, 198) 0,
-    rgb(255, 246, 198) 60px
-  );
+  // background: repeating-linear-gradient(
+  //   rgb(255, 78, 78),
+  //   rgb(255, 78, 78) 1px,
+  //   rgb(255, 246, 198) 0,
+  //   rgb(255, 246, 198) 60px
+  // );
+  background-color: #f4f3ee;
   padding: {
     left: calc(6vh + 30px);
     right: calc(6vh + 30px);
   }
   .img-card__wrapper {
     margin-top: -10vh;
-    // border: 1px solid red;
-    // background-color: rgb(255, 246, 198);
+    border-radius: 10px;
+    background-color: #bcb8b1;
     perspective: 2000px;
     &:hover {
       .img-card__front {
@@ -40,6 +41,7 @@
         }
         &.simplememo-phone-img {
           max-width: 30vw;
+          // filter: drop-shadow(1);
         }
       }
     }

@@ -46,7 +46,7 @@ $size: 40vmin;
     width: $size;
     height: $size;
     position: absolute;
-    top: 0;
+    top: -20%;
     left: 0;
     animation: blink 20s step-end infinite;
     @keyframes blink {
