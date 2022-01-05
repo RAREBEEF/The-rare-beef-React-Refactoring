@@ -7,8 +7,8 @@ export default function CubeCenter() {
   ////////////////////
   // 마우스 클릭 이벤트 //
   ///////////////////
-  const [lastX, setLastX] = useState(25);
-  const [lastY, setLastY] = useState(-25);
+  const [lastX, setLastX] = useState(-25);
+  const [lastY, setLastY] = useState(25);
 
   const dragStart = useCallback(
     (e) => {
@@ -27,8 +27,8 @@ export default function CubeCenter() {
           const nowX = e.screenX;
           const nowY = e.screenY;
 
-          moveX = lastY + clickY - nowY;
-          moveY = lastX - clickX + nowX;
+          moveX = lastX + clickY - nowY;
+          moveY = lastY - clickX + nowX;
 
           console.log(`X 회전각 : ${moveX}
 Y 회전각 : ${moveY}`);
@@ -72,14 +72,14 @@ Y 회전각 : ${moveY}`);
           const nowX = e.targetTouches[0].screenX;
           const nowY = e.targetTouches[0].screenY;
 
-          moveX = lastX - clickX + nowX;
-          moveY = lastY + clickY - nowY;
+          moveX = lastX + clickY - nowY;
+          moveY = lastY - clickX + nowX;
 
           console.log(`X 회전각 : ${moveX}
 Y 회전각 : ${moveY}`);
 
           gsap.to(`.${styles["cube"]}`, 0, {
-            transform: `rotateX(${moveY}deg) rotateY(${moveX}deg)`,
+            transform: `rotateX(${moveX}deg) rotateY(${moveY}deg)`,
           });
         }
       });
